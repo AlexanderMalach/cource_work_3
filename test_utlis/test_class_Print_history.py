@@ -5,4 +5,4 @@ from utlis import f
 
 
 def test_Print_history():
-    assert Print_history(f.import_json())
+    assert Print_history(f.import_json()) == True
