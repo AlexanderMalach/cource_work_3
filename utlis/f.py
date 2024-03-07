@@ -1,11 +1,11 @@
 import datetime
 import json
-from class_Print_history import Print_history
+import class_Print_history
 
 def import_json():
     """ Открывает json объект и возвращает его"""
     # with open('C:\\Users\\79096\\PycharmProjectsGit\\CW_3\\CW_3\\utlis\\operations.json', 'r',encoding='utf-8') as file:
-    with open('C:\\Users\\79096\\PycharmProjectsGit\\CW_3\\CW_3\\utlis\\operations.json', 'r', encoding='utf-8') as file:
+    with open('C:\\Users\\79096\\PycharmProjectsGit\\cource_work_3\\cource_work_3\\utlis\\operations.json', 'r', encoding='utf-8') as file:
         return json.load(file)
 
 
@@ -19,7 +19,7 @@ def check_error(word):
         return True
 
 
-def print_sorted_list(Print_history_=Print_history, import_json_=import_json(), min=0, max=5):
+def print_sorted_list(Print_history_=class_Print_history.Print_history, import_json_=import_json(), min=0, max=5):
     """ Сортировка 5 значений, возварщает отсортированный список индексов,
     который используеться для создания экземпляров по убыванию дат """
 
