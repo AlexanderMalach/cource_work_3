@@ -15,7 +15,7 @@ class PrintHistory:
         """ Запрашивает у словаря строку по ключу 'date',
         форматирует строку и возвращет дату в формате '%d.%m.%Y'"""
 
-        self.date_slice = (self.dict_json).get('date', "Нет даты!")
+        self.date_slice = (self.dict_json).get('date')
         self.date_print_datetime = datetime.datetime.strptime(self.date_slice[:10], "%Y-%m-%d")
         self.date_print_point = self.date_print_datetime.strftime("%d.%m.%Y")
         return self.date_print_point
