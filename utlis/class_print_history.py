@@ -6,7 +6,7 @@ import datetime
 class PrintHistory:
     """ Принимает json объект и его индекс, вытаскивает словарь"""
 
-    def __init__(self, dict_json_all, number_operation=0):
+    def __init__(self, dict_json_all, number_operation):
         self.number_operation = number_operation
         self.dict_json_all = dict_json_all
         self.dict_json = list(self.dict_json_all)[self.number_operation]
