@@ -2,6 +2,7 @@ import json
 
 import os
 
+
 def find_operations_json(name_json='operations.json'):
     """ Ищет путь к operations.json"""
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -35,5 +36,3 @@ def sorted_date():
     json_data = list(filter_executed())
     filtered_data = [i for i in json_data if 'date' in i]
     return sorted(filtered_data, key=lambda x: x['date'], reverse=True)
-
-
