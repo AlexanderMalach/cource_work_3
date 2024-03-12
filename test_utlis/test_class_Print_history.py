@@ -1,6 +1,6 @@
-from utlis.class_Print_history import Print_history
+
 import datetime
-from utlis import f
+from utlis import functions
 
 
 
