@@ -1,8 +1,6 @@
 import datetime
 
 
-
-
 class PrintHistory:
     """ Принимает json объект и его индекс, вытаскивает словарь"""
 
@@ -43,4 +41,3 @@ class PrintHistory:
         self.operation_amount = self.dict_json.get("operationAmount")
         self.currency = self.operation_amount.get("currency")
         return self.operation_amount.get("amount") + ' ' + self.currency.get("name")
-
