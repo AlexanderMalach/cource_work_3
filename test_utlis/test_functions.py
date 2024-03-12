@@ -20,8 +20,6 @@ def test_filter_executed():
     assert ((list(filter_executed())[0])['state'] == "EXECUTED") == True
     assert ((list(filter_executed())[0])['state'] == "Test") == False
 
-    # filtered_data = [i for i in json_data if 'date' in i]
-
 
 def test_sorted_date():
     assert isinstance(sorted_date(), list)
