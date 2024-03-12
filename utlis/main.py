@@ -3,7 +3,6 @@ from pprint import pprint
 from utlis.class_print_history import PrintHistory
 from utlis.functions import import_json, sorted_date
 
-d = import_json()
 sort_list = sorted_date()
 
 for i in range(5):
