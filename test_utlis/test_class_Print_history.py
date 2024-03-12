@@ -1,6 +1,5 @@
 from utlis.class_print_history import PrintHistory
-import pytest
-import datetime
+
 
 
 def test_Print_history_date():
@@ -104,3 +103,36 @@ def test_PrintHistory_account_code():
         }]
     assert PrintHistory(dict_test, 0).account_code('from') == '1596 83** **** 5199'
     assert PrintHistory(dict_test, 1).account_code('from') == 'NONE **** **** NONE'
+
+def test_PrintHistory_currency():
+    dict_test = [{
+        "id": 441945886,
+        "state": "EXECUTED",
+        "date": "2019-08-26T10:50:58.294041",
+        "operationAmount": {
+            "amount": "31957.58",
+            "currency": {
+                "name": "руб.",
+                "code": "RUB"
+            }
+        },
+        "description": "Перевод организации",
+        "from": "Maestro 1596837868705199",
+        "to": "Счет 64686473678894779589"
+    },
+        {
+            "id": 41428829,
+            "state": "EXECUTED", "date": "2019-08-26T10:50:58.294041",
+            "operationAmount": {
+                "amount": "8221.37",
+                "currency": {
+                    "name": "USD",
+                    "code": "USD"
+                }
+            },
+            "description": "Перевод организации",
+            "to": "Счет 35383033474447895560"
+        }]
+    copy = PrintHistory(dict_test, 0)
+    assert (copy.currency() == "31957.58 руб.") == True
+    # assert (copy.currency() == "31957.58 руб.") == True
