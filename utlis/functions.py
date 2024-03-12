@@ -15,7 +15,6 @@ def find_operations_json(name_json='operations.json'):
 
 def import_json():
     """ Открывает json объект и возвращает его"""
-    # with open('C:\\Users\\79096\\PycharmProjectsGit\\CW_3\\CW_3\\utlis\\operations.json', 'r',encoding='utf-8') as file:
     with open(find_operations_json(), 'r', encoding='utf-8') as file:
         return json.load(file)
 
