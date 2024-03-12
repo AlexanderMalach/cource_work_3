@@ -2,6 +2,7 @@ import json
 
 import os
 
+
 def find_operations_json(name_json='operations.json'):
     """ Ищет путь к operations.json"""
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -14,7 +15,6 @@ def find_operations_json(name_json='operations.json'):
 
 def import_json():
     """ Открывает json объект и возвращает его"""
-    # with open('C:\\Users\\79096\\PycharmProjectsGit\\CW_3\\CW_3\\utlis\\operations.json', 'r',encoding='utf-8') as file:
     with open(find_operations_json(), 'r', encoding='utf-8') as file:
         return json.load(file)
 
@@ -35,5 +35,3 @@ def sorted_date():
     json_data = list(filter_executed())
     filtered_data = [i for i in json_data if 'date' in i]
     return sorted(filtered_data, key=lambda x: x['date'], reverse=True)
-
-
