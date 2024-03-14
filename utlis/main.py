@@ -1,7 +1,5 @@
-from pprint import pprint
-
 from utlis.class_print_history import PrintHistory
-from utlis.functions import import_json, sorted_date
+from utlis.functions import sorted_date
 
 sort_list = sorted_date()
 
