@@ -6,4 +6,5 @@ sort_list = sorted_date()
 for i in range(5):
     copy = PrintHistory(sort_list, i)
     print((
-        f'\n{copy.date_print()} {copy.print_line('description')}\n{(copy.account_code('from'))} ->{copy.account_code('to')}\n{copy.currency()}\n'))
+        f'\n{copy.date_print()} {copy.print_line('description')}\n{(copy.account_code('from'))} ->'
+        f'{copy.account_code('to')}\n{copy.currency()}\n'))
