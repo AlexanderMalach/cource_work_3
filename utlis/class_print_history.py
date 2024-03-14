@@ -30,7 +30,7 @@ class PrintHistory:
         счета в формате  **XXXX"""
 
         self.from_and_to = from_and_to
-        self.payment = (self.dict_json).get(self.from_and_to, "NONE********NONE")
+        self.payment = self.dict_json.get(self.from_and_to, "NONE********NONE")
         if "Счет" in self.payment:
             return f'Счет **{self.payment[-4:]}'
         else:
