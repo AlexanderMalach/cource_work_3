@@ -1,0 +1,95 @@
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+src_paths = ["example", "configuration"]
+known_common = "common"
+sections = "FUTURE,STDLIB,THIRDPARTY,COMMON,FIRSTPARTY,LOCALFOLDER"
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+allow_subclassing_any = true
+allow_untyped_calls = true
+pretty = true
+show_error_codes = true
+implicit_reexport = true
+allow_untyped_decorators = true
+warn_return_any = false
+
+#[tool.coverage.run]
+#omit = [
+#    "*/web/main.py",
+#    "*service_db/migrations/*",
+#    "*/web/lifetime.py",
+#    "*/web/application.py",
+#    "*/web/exception_handlers.py",
+#  ]
+
+[tool.ruff]
+exclude = [
+    "venv",
+    "unused",
+    ".git",
+    ".idea",
+]
+fix = false
+# Group violations by containing file.
+output-format = "grouped"
+# Enumerate all fixed violations.
+show-fixes = true
+typing-modules = ["dags.dev.ritm_dags.ritm_common.type_hinting.py"]
+
+# Same as Black.
+line-length = 120
+indent-width = 4
+
+# Assume Python 3.11
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["A", "E", "I", "U",   "B", "C", "D", "F", "G", "M", "N",  "Q", "R", "S", "T",  "W", "COM"]
+ignore = [
+    # Single quotes found but double quotes preferred
+#    "Q000",
+    # Single quote multiline found but double quotes preferred
+#    "Q001",
+    # Multi-line docstring summary should start at the first line
+    "D212",
+    # No blank lines allowed after function docstring (found {num_lines})
+    "D202",
+    # Probable insecure usage of temporary file or directory: "{}"
+    "S108",
+    # Missing docstring in public module
+    "D100",
+    # Logging statement uses f-string
+    "G004",
+    # Possible SQL injection vector through string-based query construction
+    "S608",
+    # Checks for docstrings on class definitions that are not preceded by a blank line.
+    "D203",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint.flake8-quotes]
+multiline-quotes = "double"
+inline-quotes = "double"
+docstring-quotes = "double"
+
+[tool.ruff.lint.pycodestyle]
+max-line-length = 121
+max-doc-length = 120
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-single-line = true
+# Use a single line after each import block.
+lines-after-imports = 2
+# Use a single line between direct and from import.
+lines-between-types = 1
+
+[tool.ruff.lint.mccabe]
+# Flag errors (`C901`) whenever the complexity level exceeds 5.
+max-complexity = 5
+

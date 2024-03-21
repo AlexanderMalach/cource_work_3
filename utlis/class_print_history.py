@@ -1,8 +1,8 @@
-import datetime
+from datetime import datetime
 
 
 class PrintHistory:
-    """ Принимает json объект и его индекс, вытаскивает словарь"""
+    """Принимает json объект и его индекс, вытаскивает словарь."""
 
     def __init__(self, dict_json_all, number_operation):
         self.number_operation = number_operation
@@ -14,7 +14,7 @@ class PrintHistory:
         форматирует строку и возвращет дату в формате '%d.%m.%Y'"""
 
         date_slice = self.dict_json.get('date')
-        date_print_datetime = datetime.datetime.strptime(date_slice[:10], "%Y-%m-%d")
+        date_print_datetime = datetime.strptime(date_slice[:10], "%Y-%m-%d")
         date_print_point = date_print_datetime.strftime("%d.%m.%Y")
         return date_print_point
 
