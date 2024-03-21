@@ -1,11 +1,12 @@
 import json
 
 import os
+from pathlib import Path
 
 
 def find_operations_json(name_json='operations.json'):
     """ Ищет путь к operations.json"""
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    script_dir = Path(__file__).parent.parent.joinpath("input")
     operations_json_path = os.path.join(script_dir, name_json)
     if os.path.exists(operations_json_path):
         return operations_json_path
